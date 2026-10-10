@@ -2,25 +2,19 @@
 class Agentsims < Formula
   desc "Local multi-device simulator workspace for iOS and Android"
   homepage "https://agentsims.dev"
-  version "0.1.2"
+  version "0.1.3"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.2"
-    sha256 cellar: "/opt/homebrew/Cellar", arm64_sequoia: "c0799d0ed4d74d19b02563d89d8a127cc436c6298e99a1b5659a283f6f3a053c"
-    sha256 cellar: :any, sequoia: "e71bd796a0bcf979196f642d8d6854fcfb13c28c14eb3b50124c59925c749f89"
-  end
 
   on_macos do
     depends_on macos: :sonoma
 
     on_arm do
-      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.2/agentsims-darwin-arm64.tar.gz"
-      sha256 "358502d5c96cd9c624f7a9c4c41b71b891bfe14bf6a3cbff3d7293ca9c8016e8"
+      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.3/agentsims-darwin-arm64.tar.gz"
+      sha256 "e57334be18fc0b5540637aedda12f721326f5a5aff7a8093804fc36eb0cb4228"
     end
     on_intel do
-      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.2/agentsims-darwin-x64.tar.gz"
-      sha256 "2f8583333026cd30c873c11b4f5bbd141cbe797f0dd8bc74a319effc52a7d1dd"
+      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.3/agentsims-darwin-x64.tar.gz"
+      sha256 "8e176a2fb7db1d0bf52961566b1c37b1194920ba676b5c81bede8a153416ffc4"
     end
   end
 
@@ -28,8 +22,8 @@ class Agentsims < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.2/agentsims-linux-x64.tar.gz"
-      sha256 "12fe99036f623acbf23f6105671f7db0f92f5af5e142fc574793a29fc105b5a0"
+      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.3/agentsims-linux-x64.tar.gz"
+      sha256 "27fe70c17be1c078b08491e97c8c421c3781c907c26a0f62a9d024f31ab73be3"
     end
   end
 
