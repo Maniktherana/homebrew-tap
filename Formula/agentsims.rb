@@ -5,6 +5,12 @@ class Agentsims < Formula
   version "0.1.6"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.6"
+    sha256 cellar: "/opt/homebrew/Cellar", arm64_sequoia: "b547cdd5518aff559a35902909cf7ccd39f8c967d1478766290b69169b40df20"
+    sha256 cellar: :any, sequoia: "fbf32c35d3ff730a9573cf04f7238745b4f7760583a5d62e18454d825a499fa8"
+  end
+
   on_macos do
     depends_on macos: :sonoma
 
