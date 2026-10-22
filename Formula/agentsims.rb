@@ -2,25 +2,19 @@
 class Agentsims < Formula
   desc "Local multi-device simulator workspace for iOS and Android"
   homepage "https://agentsims.dev"
-  version "0.1.7"
+  version "0.1.8"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.7"
-    sha256 cellar: "/opt/homebrew/Cellar", arm64_sequoia: "1552f4a386245a2fbee63e50d4dfeca7f48df0a2f3a2dce4c93bca6983a010fb"
-    sha256 cellar: :any, sequoia: "a601928b3c42386990a9f776291a167b5fb6c8610072b84f3eeeb8d091f6eedf"
-  end
 
   on_macos do
     depends_on macos: :sonoma
 
     on_arm do
-      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.7/agentsims-darwin-arm64.tar.gz"
-      sha256 "ac5f9cfe1db243fba973cb9b123e57cac21e08598e3a81b573de3395e179ed6e"
+      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.8/agentsims-darwin-arm64.tar.gz"
+      sha256 "7417a0ed5a2f6f02aac442456f1ab981865c3d6628e8f215a66a2fb716958ed2"
     end
     on_intel do
-      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.7/agentsims-darwin-x64.tar.gz"
-      sha256 "ecf69fe87608538f8e7b9f142bdf1dd29684c18d1b83e10dd4facc75b45c2aee"
+      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.8/agentsims-darwin-x64.tar.gz"
+      sha256 "d3291d6dda58038fae0fd34f4a963c0fe88e2aa641ee00362bc77e7516402cde"
     end
   end
 
@@ -28,8 +22,8 @@ class Agentsims < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.7/agentsims-linux-x64.tar.gz"
-      sha256 "ab553fd6fa9965754e7ac40de51e526fef6eaf12c5ef21f02aca2522fef066ac"
+      url "https://github.com/Maniktherana/agentsims/releases/download/v0.1.8/agentsims-linux-x64.tar.gz"
+      sha256 "d3649e58bbc78e21562e48df985dad6ce24dc2f85f3f61d58fdfaa27687484f3"
     end
   end
 
@@ -37,6 +31,14 @@ class Agentsims < Formula
     # The executable loads its browser and platform assets from its own directory.
     libexec.install "dist"
     bin.write_exec_script libexec/"dist/agentsims"
+  end
+
+  def caveats
+    <<~EOS
+      To give the Agentsims skill to Claude Code, Codex, Cursor, and other
+      coding agents, run:
+        agentsims skill
+    EOS
   end
 
   test do
